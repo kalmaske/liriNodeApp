@@ -1,0 +1,19 @@
+{
+  "name": "lirinodeapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "liri.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kalmaske/liriNodeApp.git"
+  },
+  "author": "Khadija Almaskeen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kalmaske/liriNodeApp/issues"
+  },
+  "homepage": "https://github.com/kalmaske/liriNodeApp#readme"
+}
