@@ -1,9 +1,15 @@
 var fs = require("fs"); //reads and writes files
 var request = require("request");
-var keys = require("./key.js");
+var key = require("./key.js");
 var twitter = require("twitter");
-var spotify = require ("spotify");
+var Spotify = require ("node-spotify-api");
 var liriArg = process.argv[2];
+var spotifyKeys = key.spotify;
+var spotifyInput = process.argv[3];
+var spotify = new Spotify( {
+    id :'e0e9d80c39244814b0e529ad845b31be',
+    secret : '70db0dee5825472fa26d6d32ee413aa4'
+    });
 
 
 switch(liriArg) {
@@ -11,7 +17,7 @@ switch(liriArg) {
         "my-tweets": myTweets(); 
         break;
     case 
-        "spotify-this-song": spotifyThisSong(); 
+        "spotify-this-song": spotifyThisSong(spotifyInput); 
         break;
     case 
         "movie-this": movieThis(); 
@@ -60,84 +66,96 @@ function myTweets() {
     });
 }
 
-	// Spotify 
-	function spotifyThisSong(songName) {
-		var songName = process.argv[3];
-		if(!songName){
-			songName = "I'm Alive";
-		}
-		params = songName;
-		spotify.search({ type: "track", query: params }, function(err, data) {
-			if(!err){
-                console.log(JSON.stringify(data));
-				var songInfo = data.tracks.items;
-				for (var i = 0; i < 5; i++) {
-					if (songInfo[i] != undefined) {
-						var spotifyResults =
-						"Artist: " + songInfo[i].artists[0].name + "\r\n" +
-						"Song: " + songInfo[i].name + "\r\n" +
-						"Album: " + songInfo[i].album.name + "\r\n" +
-						"Preview Url: " + songInfo[i].preview_url + "\r\n" ;
-						console.log(spotifyResults);
-						log(spotifyResults); // calling log function
-					}
-				}
-			}	else {
-				console.log("Error :"+ err);
-				return;
-			}
-		});
-	};
+// Spotify 
 
-//movie this
-function movieThis(){
-    var movie = process.argv[3];
-    if(!movie){
-        movie = "";
-    }
-    movieName = movie
-    request("http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&r=json&tomatoes=true", function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-            var movieInfo = JSON.movieName(body);
-            //console.log(movieObject); 
-            var movieResults =
-           
-            "Title: " + movieInfo.Title+"\r\n"+
-            "Year: " + movieInfo.Year+"\r\n"+
-            "Imdb Rating: " + movieInfo.imdbRating+"\r\n"+
-            "Country: " + movieInfo.Country+"\r\n"+
-            "Language: " + movieInfo.Language+"\r\n"+
-            "Plot: " + movieInfo.Plot+"\r\n"+
-            "Actors: " + movieInfo.Actors+"\r\n"+
-            "Rotten Tomatoes Rating: " + movieInfo.tomatoRating+"\r\n"+
-            "Rotten Tomatoes URL: " + movieInfo.tomatoURL + "\r\n";
-           
-            console.log(movieResults);
-            log(movieResults); // call log function
-        } else {
-            console.log("Error :"+ error);
-            return;
+  
+    
+function spotifyThisSong(spotifyInput){
+    //console.log(spotifyInput);
+        if (!spotifyInput) {
+            
+            spotifyInput = "summertime sadness";
+            console.log(spotifyInput);
         }
-    });
+       // console.log(spotify);
+        spotify.search(
+        {
+            type:"track",
+            query:spotifyInput,
+            limit:5
+        },
+        function(err, data) {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            var list = data.tracks.items;
+            console.log(list);
+            
+            for(var i=0;i< list.length;i++){
+       
+                    console.log("Artist(s): " + data.tracks.items[i].album.artists[i] + "\n" 
+                    + "Song : " + data.tracks.items[i].name 
+                    + "\n" + "URL Link: " 
+                    + data.tracks.items[i].preview_url 
+                    + "\n" + "Album : " + data.tracks.items[i].album.name)
+                    +"-------------"; 
+            }
+        })
+    }
 
-    	// What It Says function, random.txt
-	function doWhatItSays() {
-		fs.readFile("random.txt", "utf8", function(error, data){
-			if (!error) {
-				doWhatItSaysResults = data.split(",");
-				spotifyThisSong(doWhatItSaysResults[0], doWhatItSaysResults[1]);
-			} else {
-				console.log("Error occurred" + error);
-			}
-		});
-	};
-	// What It Says function, log.txt file
-	function log(logResults) {
-	  fs.appendFile("log.txt", logResults, (error) => {
-	    if(error) {
-	      throw error;
-	    }
-	  });
-	}
+    
+                
+    
+//   //movie this
+// function movieThis(){
+//     var movie = process.argv[3];
+//     if(!movie){
+//         movie = "";
+//     }
+//     movieName = movie
+//     request("http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&r=json&tomatoes=true", function (error, response, body) {
+//         if (!error && response.statusCode == 200) {
+//             var movieInfo = JSON.movieName(body);
+//             //console.log(movieObject); 
+//             var movieResults =
+           
+//             "Title: " + movieInfo.Title+"\r\n"+
+//             "Year: " + movieInfo.Year+"\r\n"+
+//             "Imdb Rating: " + movieInfo.imdbRating+"\r\n"+
+//             "Country: " + movieInfo.Country+"\r\n"+
+//             "Language: " + movieInfo.Language+"\r\n"+
+//             "Plot: " + movieInfo.Plot+"\r\n"+
+//             "Actors: " + movieInfo.Actors+"\r\n"+
+//             "Rotten Tomatoes Rating: " + movieInfo.tomatoRating+"\r\n"+
+//             "Rotten Tomatoes URL: " + movieInfo.tomatoURL + "\r\n";
+           
+//             console.log(movieResults);
+//             log(movieResults); // call log function
+//         } else {
+//             console.log("Error :"+ error);
+//             return;
+//         }
+//     });
+
+//     	// What It Says function, random.txt
+// 	function doWhatItSays() {
+// 		fs.readFile("random.txt", "utf8", function(error, data){
+// 			if (!error) {
+// 				doWhatItSaysResults = data.split(",");
+// 				spotifyThisSong(doWhatItSaysResults[0], doWhatItSaysResults[1]);
+// 			} else {
+// 				console.log("Error occurred" + error);
+// 			}
+// 		});
+// 	};
+// 	// What It Says function, log.txt file
+// 	function log(logResults) {
+// 	  fs.appendFile("log.txt", logResults, (error) => {
+// 	    if(error) {
+// 	      throw error;
+// 	    }
+// 	  });
+// 	}
    
-};
+// };
