@@ -1,0 +1,72 @@
+Title: The Shawshank Redemption
+Year: 1994
+Imdb Rating: 9.3
+Country: USA
+Language: English
+Plot: Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.
+Actors: Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler
+Rotten Tomatoes Rating: N/A
+Rotten Tomatoes URL: http://www.rottentomatoes.com/m/shawshank_redemption/
+Title: Frozen
+Year: 2013
+Imdb Rating: 7.5
+Country: USA
+Language: English, Icelandic
+Plot: When the newly crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister, Anna, teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.
+Actors: Kristen Bell, Idina Menzel, Jonathan Groff, Josh Gad
+Rotten Tomatoes Rating: N/A
+Rotten Tomatoes URL: http://www.rottentomatoes.com/m/frozen_2013/
+Title: undefined
+Year: undefined
+Imdb Rating: undefined
+Country: undefined
+Language: undefined
+Plot: undefined
+Actors: undefined
+Rotten Tomatoes Rating: undefined
+Rotten Tomatoes URL: undefined
+Title: undefined
+Year: undefined
+Imdb Rating: undefined
+Country: undefined
+Language: undefined
+Plot: undefined
+Actors: undefined
+Rotten Tomatoes Rating: undefined
+Rotten Tomatoes URL: undefined
+Title: undefined
+Year: undefined
+Imdb Rating: undefined
+Country: undefined
+Language: undefined
+Plot: undefined
+Actors: undefined
+Rotten Tomatoes Rating: undefined
+Rotten Tomatoes URL: undefined
+Title: undefined
+Year: undefined
+Imdb Rating: undefined
+Country: undefined
+Language: undefined
+Plot: undefined
+Actors: undefined
+Rotten Tomatoes Rating: undefined
+Rotten Tomatoes URL: undefined
+Title: Moana
+Year: 2016
+Imdb Rating: 7.7
+Country: USA
+Language: English
+Plot: In Ancient Polynesia, when a terrible curse incurred by the Demigod Maui reaches Moana's island, she answers the Ocean's call to seek out the Demigod to set things right.
+Actors: Auli'i Cravalho, Dwayne Johnson, Rachel House, Temuera Morrison
+Rotten Tomatoes Rating: N/A
+Rotten Tomatoes URL: http://www.rottentomatoes.com/m/moana_2016/
+Title: Focus
+Year: 2015
+Imdb Rating: 6.6
+Country: USA, Argentina
+Language: English, Spanish
+Plot: In the midst of veteran con man Nicky's latest scheme, a woman from his past - now an accomplished femme fatale - shows up and throws his plans for a loop.
+Actors: Will Smith, Margot Robbie, Adrian Martinez, Gerald McRaney
+Rotten Tomatoes Rating: N/A
+Rotten Tomatoes URL: http://www.rottentomatoes.com/m/focus_2014/
