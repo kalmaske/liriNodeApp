@@ -45,7 +45,7 @@ movie-this : output the following information to your terminal/bash window:
   
 	* Plot of the movie.
   
- * Actors in the movie
+ 	* Actors in the movie
 
 Fourth Command
 do-what-it-says : Using the fs Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
