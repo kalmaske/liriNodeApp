@@ -50,3 +50,24 @@ movie-this : output the following information to your terminal/bash window:
 Fourth Command
 do-what-it-says : Using the fs Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
 It should run spotify-this-song for "I Want it That Way," as follows the text in random.txt.
+
+
+Key.js file contains:
+
+	console.log('this is loaded');
+
+	exports.twitterKeys = {
+	  consumer_key: '',
+	  consumer_secret: '',
+	  access_token_key: '',
+	  access_token_secret: '',
+	}
+
+	exports.spotify = {
+	    id :'',
+	    secret : ''
+	  }
+
+	  exports.OMDB = {
+	    id: ''
+	};
